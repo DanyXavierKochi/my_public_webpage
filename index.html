@@ -1,61 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>St. Anthony’s Church, Kannamaly – Photo Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kannamaly Church</title>
+  <meta name="description" content="Kannamaly Church — Community, Worship, Service in Kannamaly, Kochi." />
+  <meta property="og:title" content="Kannamaly Church" />
+  <meta property="og:description" content="Join worship, community events, and service at Kannamaly Church." />
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fafafa;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background-color: #003366;
-      color: #fff;
-      padding: 20px;
-      font-size: 1.8em;
-    }
-    .image-container {
-      margin: 30px auto;
-      max-width: 900px;
-      padding: 0 20px;
-    }
-    .church-photo {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      color: #555;
-      background-color: #f1f1f1;
-      font-size: 0.9em;
-    }
-    @media(max-width: 600px) {
-      header {
-        font-size: 1.4em;
-      }
-    }
+    /* Simple, self-contained styles for the single-file site */
+    :root{--accent:#0b6f62;--muted:#666;--card:#ffffff;--bg:#f7faf9}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;line-height:1.5;color:#222;margin:0;background:var(--bg)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{background:linear-gradient(90deg,rgba(11,111,98,.95),rgba(6,72,65,.9));color:white;padding:20px 0}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo img{width:56px;height:56px;object-fit:cover;border-radius:8px}
+    nav a{color:rgba(255,255,255,.95);text-decoration:none;margin-left:18px;font-weight:600}/* Hero */
+.hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center;padding:36px 0}
+.hero .hero-text h1{font-size:2rem;margin:0 0 10px}
+.hero .hero-text p{color:rgba(255,255,255,.95);margin:0 0 18px}
+.btn{display:inline-block;background:var(--accent);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+
+/* Card sections */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px}
+.card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 4px 12px rgba(10,10,10,.06)}
+h2{margin-top:0}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px}
+.gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+
+/* Events list */
+.events li{margin-bottom:10px}
+
+footer{padding:24px 0;color:var(--muted)}
+
+/* Responsive layout */
+@media(min-width:800px){
+  .hero{grid-template-columns:1fr 420px}
+  .hero .hero-text h1{font-size:2.4rem}
+}
+
+/* utility */
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+.pill{background:rgba(11,111,98,.09);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:800px){.contact-grid{grid-template-columns:1fr 320px}}
+
   </style>
 </head>
 <body>
-
-  <header>Photo: St. Anthony’s Church, Kannamaly</header>
-
-  <div class="image-container">
-    <img class="church-photo"
-         src="https://www.justdial.com/Ernakulam/St-Antonys-Church-Kannamali-Post-Kannamali/0484PX484-X484-110225101224-U8L5_BZDET/gallery?tab=all&template=1&menu_slider=0&vrsn=3.0&isOpenAbd=undefined&bd=&abd_btn=&ncatid=&mncatname=&term=&area=&search=St-Antonys-Church-Kannamali-Post-Kannamali&abd_heading=&dselect=431876373&pselect=&sname=&scat="
-         alt="St. Anthony’s Church, Kannamaly">
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <!-- Replace src with your logo (e.g. images/logo.png) -->
+        <img src="images/logo.png" alt="Kannamaly Church logo" onerror="this.style.display='none'" />
+        <div>
+          <div style="font-weight:800;font-size:1.05rem">Kannamaly Church</div>
+          <div class="small muted">Kannamaly, Kochi — Community & Worship</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>  <!-- HERO / Banner -->  <section class="container hero" style="margin-top:-30px">
+    <div class="hero-text">
+      <!-- Replace the background/banner image below with images/banner.jpg -->
+      <div style="background: url('images/banner.jpg') center/cover no-repeat;border-radius:14px;padding:28px;color:white;">
+        <h1>Welcome to Kannamaly Church</h1>
+        <p class="small">A place for prayer, community service, and celebration. Join our weekly services and community programs — all are welcome.</p>
+        <div style="margin-top:10px">
+          <a class="btn" href="#contact">Visit / Contact</a>
+          <a class="btn" href="#events" style="background:rgba(255,255,255,.95);color:var(--accent);margin-left:10px">Events</a>
+        </div>
+      </div><div class="cards" style="margin-top:14px">
+    <div class="card">
+      <h3 style="margin:0 0 6px">Service Times</h3>
+      <div class="small muted">Sunday Holy Qurbana — 7:30 AM & 9:30 AM</div>
+    </div>
+    <div class="card">
+      <h3 style="margin:0 0 6px">Location</h3>
+      <div class="small muted">Kannamaly, near the seashore — Ernakulam District, Kerala</div>
+    </div>
+    <div class="card">
+      <h3 style="margin:0 0 6px">Contact</h3>
+      <div class="small muted">Phone: +91 99999 99999<br/>Email: info@kannamalychurch.com</div>
+    </div>
   </div>
+</div>
 
-  <footer>
-    © 2025 St. Anthony’s Church, Kannamaly – Photo Page
-  </footer>
+<!-- Quick contact card / map -->
+<aside>
+  <div class="card">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div>
+        <div class="pill">Welcome</div>
+        <h3 style="margin:8px 0">Plan a Visit</h3>
+        <div class="small muted">Join Sunday worship, community kitchen (Annadanam), and weekday prayer meetings.</div>
+      </div>
+    </div>
+    <hr style="margin:12px 0;border:none;border-top:1px solid #eee" />
+    <!-- Optional: replace iframe src with Google Maps embed for exact church location -->
+    <div style="width:100%;height:200px;border-radius:8px;overflow:hidden;background:#eee;display:flex;align-items:center;justify-content:center">Map placeholder</div>
+    <div style="margin-top:10px;text-align:center">
+      <a class="btn" href="#contact">Get Directions</a>
+    </div>
+  </div>
+</aside>
 
-</body>
+  </section>  <main class="container">
+    <!-- About -->
+    <section id="about" style="margin-top:28px">
+      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+        <div style="flex:1;min-width:280px">
+          <h2>About Kannamaly Church</h2>
+          <p class="muted">Kannamaly Church has been a spiritual and community landmark in Kannamaly for generations. We focus on worship, pastoral care, and service programs including food distribution, youth education, and health camps. Everyone is invited to participate and serve.</p>
+          <p class="small">If you want the About text in Malayalam or a specific historical timeline added, I can update this copy.</p>
+        </div>
+        <div style="width:360px">
+          <!-- Replace with church interior photo -->
+          <img src="images/interior.jpg" alt="Church interior" style="width:100%;height:220px;object-fit:cover;border-radius:10px" onerror="this.style.display='none'" />
+        </div>
+      </div>
+    </section><!-- Events -->
+<section id="events" style="margin-top:28px">
+  <h2>Upcoming Events</h2>
+  <ul class="events small">
+    <li><strong>Nov 1, 2025 — Feast Day Celebration</strong> — Special Holy Qurbana and procession.</li>
+    <li><strong>Dec 24, 2025 — Christmas Eve Service</strong> — Candlelight service at 10:00 PM.</li>
+    <li><strong>Jan 6, 2026 — Epiphany</strong> — Blessing of families and house visits.</li>
+  </ul>
+  <p class="small muted">To add event registration links or ticketing, replace the list items with linked buttons and a form.</p>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" style="margin-top:28px">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <!-- Replace srcs with your images (images/gallery1.jpg etc) -->
+    <img src="images/gallery1.jpg" alt="Event photo 1" onerror="this.style.display='none'" />
+    <img src="images/gallery2.jpg" alt="Event photo 2" onerror="this.style.display='none'" />
+    <img src="images/gallery3.jpg" alt="Event photo 3" onerror="this.style.display='none'" />
+    <img src="images/gallery4.jpg" alt="Event photo 4" onerror="this.style.display='none'" />
+  </div>
+</section>
+
+<!-- Volunteer / Donate -->
+<section style="margin-top:28px">
+  <div class="card" style="display:flex;justify-content:space-between;align-items:center">
+    <div>
+      <h2 style="margin:0">Serve & Support</h2>
+      <div class="small muted">Volunteer for the community kitchen, teaching programs, or help with maintenance and events.</div>
+    </div>
+    <div>
+      <a class="btn" href="#contact">Volunteer</a>
+      <a class="btn" href="https://" style="background:#ff9f1c;margin-left:8px">Donate</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="margin-top:28px">
+  <h2>Contact & Visit</h2>
+  <div class="contact-grid">
+    <div class="card">
+      <h3 style="margin-top:0">Reach Us</h3>
+      <p class="small muted">Kannamaly Church<br/>Kannamaly, Kochi<br/>Phone: +91 99999 99999<br/>Email: info@kannamalychurch.com</p>
+      <p class="small">Office hours: Mon–Sat 9:00 AM — 5:00 PM</p>
+
+      <form action="/submit-form" method="post" style="margin-top:12px;display:grid;gap:8px">
+        <input name="name" placeholder="Your name" required style="padding:8px;border-radius:8px;border:1px solid #ddd" />
+        <input name="email" placeholder="Email" required style="padding:8px;border-radius:8px;border:1px solid #ddd" />
+        <textarea name="message" placeholder="Message / prayer request" rows="4" style="padding:8px;border-radius:8px;border:1px solid #ddd"></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0">Find Us</h3>
+      <p class="small muted">Use the map for directions. If you'd like the exact Google Maps embed added here, provide the place ID or address and I will insert it.</p>
+      <div style="width:100%;height:260px;border-radius:8px;overflow:hidden;background:#eee;display:flex;align-items:center;justify-content:center">Map placeholder</div>
+    </div>
+  </div>
+</section>
+
+<footer style="margin-top:28px">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+    <div class="small muted">© <span id="year"></span> Kannamaly Church. All rights reserved.</div>
+    <div class="small muted">Designed with ❤️ for the Kannamaly community.</div>
+  </div>
+</footer>
+
+  </main>  <script>
+    // auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script></body>
 </html>
