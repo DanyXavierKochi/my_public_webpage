@@ -2,214 +2,287 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>St. Antony’s Church, Kannamaly</title>
 
   <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
+      background-color: #f5f7fa;
       color: #333;
       line-height: 1.7;
+      scroll-behavior: smooth;
     }
 
-    header {
-      background: #0b4f8a;
-      color: #fff;
-      padding: 30px 20px;
+    /* HERO */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.55);
+      /* darken for overlay readability */
+    }
+
+    .hero .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
       text-align: center;
+      padding: 0 20px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+      max-width: 90vw;
     }
 
-    header h1 {
+    .hero .overlay h1 {
+      font-size: 3.5rem;
+      margin: 0 0 0.3em;
+      font-weight: 700;
+    }
+
+    .hero .overlay p {
+      font-size: 1.6rem;
       margin: 0;
-      font-size: 2.5em;
+      font-style: italic;
+      letter-spacing: 0.05em;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-
+    /* NAVIGATION */
     nav {
       background: #083b66;
-      padding: 10px;
+      padding: 15px 10px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 12px;
-      font-size: 1em;
+      margin: 0 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 0;
+      display: inline-block;
+      transition: color 0.3s ease;
+      border-bottom: 3px solid transparent;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    nav a:hover,
+    nav a:focus,
+    nav a.active {
+      color: #f9a825;
+      border-bottom-color: #f9a825;
+      outline: none;
     }
 
+    /* CONTAINER */
     .container {
       max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
     }
 
+    /* SECTIONS */
     section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
 
     section h2 {
+      font-size: 2.3rem;
       color: #0b4f8a;
-      border-bottom: 2px solid #0b4f8a;
+      border-bottom: 3px solid #0b4f8a;
       padding-bottom: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      font-weight: 700;
     }
 
+    section p {
+      font-size: 1.15rem;
+      margin-bottom: 1em;
+      white-space: pre-line; /* preserve line breaks if any */
+    }
+
+    /* FOOTER */
     footer {
-      background: #222;
+      background-color: #222;
       color: #ccc;
       text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9em;
+      padding: 25px 15px;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero .overlay h1 {
+        font-size: 2.4rem;
+      }
+      .hero .overlay p {
+        font-size: 1.1rem;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+      .container {
+        margin: 30px auto 60px;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>St. Antony’s Church, Kannamaly</h1>
-  <p>A Sacred Heritage of Faith, Devotion, and Miracles</p>
-</header>
+  <!-- HERO SECTION -->
+  <div class="hero" role="img" aria-label="Image of St. Antony’s Church, Kannamaly">
+    <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly" />
+    <div class="overlay">
+      <h1>St. Antony’s Church, Kannamaly</h1>
+      <p>Faith • History • Devotion</p>
+    </div>
+  </div>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#history">History</a>
-  <a href="#nercha">Nercha Sadya</a>
-  <a href="#statue">Miraculous Statue</a>
-  <a href="#chapel">St. Joseph Chapel</a>
-</nav>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#history">History</a>
+    <a href="#nercha">Nercha Sadya</a>
+    <a href="#statue">Miraculous Statue</a>
+    <a href="#chapel">St. Joseph Chapel</a>
+  </nav>
 
-<div class="container">
+  <!-- MAIN CONTENT -->
+  <main class="container">
 
-  <!-- Home -->
-  <section id="home">
-    <h2>Home</h2>
-    <p>
-      St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning
-      over <strong>267 years</strong>. Rooted in devotion and shaped by resilience through history,
-      the church stands today as a living testimony of God’s grace and the loving intercession
-      of St. Antony, serving as a spiritual home for generations of faithful.
-    </p>
+    <!-- HOME -->
+    <section id="home" tabindex="-1">
+      <h2>Home</h2>
+      <p>
+        St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
+        <strong>267 years</strong>. Rooted in devotion and shaped by resilience through history,
+        the church stands today as a living testimony of God’s grace and the loving intercession
+        of St. Antony, serving as a spiritual home for generations of faithful.
+      </p>
 
-    <p>
-      The Kannamaly St. Joseph Nercha Sadya, observed since <strong>1905</strong>, commemorates
-      a miraculous healing from a cholera outbreak. Held annually on <strong>19 March</strong>,
-      the feast remains a powerful expression of faith and thanksgiving.
-    </p>
+      <p>
+        The Kannamaly St. Joseph Nercha Sadya, observed since <strong>1905</strong>, commemorates
+        a miraculous healing from a cholera outbreak and continues to draw lakhs of devotees
+        every year on <strong>19 March</strong>.
+      </p>
 
-    <p>
-      The Miraculous Statue of St. Joseph of Kannamaly, brought from Spain in 1905, continues
-      to draw countless devotees who seek his powerful intercession with deep faith and devotion.
-    </p>
-  </section>
+      <p>
+        The Miraculous Statue of St. Joseph, brought from Spain in 1905, remains a treasured
+        symbol of divine grace for the faithful.
+      </p>
+    </section>
 
-  <!-- Church History -->
-  <section id="history">
-    <h2>History of St. Antony’s Church, Kannamaly</h2>
-    <p>
-      St. Antony’s Church, Kannamaly has a rich and enduring history spanning over 267 years.
-      The first Kannamaly church was established in <strong>1745</strong>, about 3 km west of
-      the present church site, under the patronage of Our Lady of the Immaculate Conception.
-    </p>
+    <!-- HISTORY -->
+    <section id="history" tabindex="-1">
+      <h2>History of St. Antony’s Church, Kannamaly</h2>
+      <p>
+        The first Kannamaly church was established in <strong>1745</strong> under the patronage of
+        Our Lady of the Immaculate Conception. It was destroyed in a sea attack in 1795, leading
+        to the construction of a second church in 1796.
+      </p>
 
-    <p>
-      This church was destroyed by a sea attack in 1795, following which a second church was
-      constructed in 1796. In <strong>1873</strong>, Kannamaly was separated from the Mundamveli
-      parish and declared an independent parish.
-    </p>
+      <p>
+        In <strong>1873</strong>, Kannamaly became an independent parish. Severe sea attacks in 1905 and 1908
+        caused major destruction, after which the present church foundation was laid on
+        <strong>13 June 1909</strong>.
+      </p>
 
-    <p>
-      Severe sea attacks in 1905 and 1908 caused partial and then complete destruction of the
-      church. On <strong>13 June 1909</strong>, the foundation stone for the third church was laid
-      at the present location. The present church was solemnly blessed on
-      <strong>22 November 1942</strong>.
-    </p>
+      <p>
+        The church was solemnly blessed on <strong>22 November 1942</strong> and is now revered under
+        the patronage of <strong>St. Antony</strong>.
+      </p>
+    </section>
 
-    <p>
-      Though originally dedicated to Our Lady of the Immaculate Conception, the church is now
-      lovingly known and revered under the patronage of <strong>St. Antony</strong>.
-    </p>
-  </section>
+    <!-- NERCHA SADYA -->
+    <section id="nercha" tabindex="-1">
+      <h2>History of St. Joseph Nercha Sadya</h2>
+      <p>
+        Originating in 1905 during a devastating cholera outbreak, the Nercha Sadya began after a
+        divine vision received by the parish priest, Fr. Joseph Swares.
+      </p>
 
-  <!-- Nercha Sadya -->
-  <section id="nercha">
-    <h2>History of St. Joseph Nercha Sadya</h2>
-    <p>
-      The Votive Feast (Nercha Sadya) of St. Joseph at Kannamaly has a sacred history of over
-      <strong>121 years</strong>. It originated in 1905 during a devastating period of sea erosion
-      and a deadly cholera outbreak.
-    </p>
+      <p>
+        Through the powerful intercession of St. Joseph, the epidemic subsided, and Kannamaly has
+        since remained protected. The feast is observed every year on <strong>19 March</strong>.
+      </p>
+    </section>
 
-    <p>
-      Inspired by a divine vision received by the parish priest, Fr. Joseph Swares, the faithful
-      observed the Feast of St. Joseph on 19 March 1905 with special devotion. Blessed food was
-      shared among the people and the sick.
-    </p>
+    <!-- MIRACULOUS STATUE -->
+    <section id="statue" tabindex="-1">
+      <h2>Miraculous Statue of St. Joseph</h2>
+      <p>
+        Brought from Spain in 1905, the statue miraculously remained at Kannamaly after a ship
+        carrying it became grounded.
+      </p>
 
-    <p>
-      By God’s grace and the powerful intercession of St. Joseph, the cholera epidemic subsided,
-      and Kannamaly has since been spared from the disease. Even today, lakhs of devotees gather
-      every year to participate in the Nercha Sadya.
-    </p>
-  </section>
+      <p>
+        The statue soon became known for miracles, including the healing of cattle, and was later
+        installed reverently in the church.
+      </p>
+    </section>
 
-  <!-- Miraculous Statue -->
-  <section id="statue">
-    <h2>Miraculous Statue of St. Joseph</h2>
-    <p>
-      The miraculous statue of St. Joseph was brought from Spain by Carmelite priests in 1905.
-      When the ship reached Kannamaly, it mysteriously halted until one statue was taken ashore,
-      revealing divine intent.
-    </p>
+    <!-- NEW CHAPEL -->
+    <section id="chapel" tabindex="-1">
+      <h2>The New Chapel of St. Joseph</h2>
+      <p>
+        The foundation stone was laid on <strong>19 March 2012</strong> by Shri Oommen Chandy and blessed
+        by Bishop Dr. Joseph Kariyil.
+      </p>
 
-    <p>
-      The statue, initially forgotten, later became a source of miraculous healing when straw
-      from its wrapping cured diseased cattle. Recognizing its sacred nature, the statue was
-      restored and installed in the church.
-    </p>
+      <p>
+        Blessed in March 2015, the chapel uniquely houses relics of ten saints and stands as the only
+        such chapel in Asia.
+      </p>
+    </section>
 
-    <p>
-      The same miraculous statue continues to bless devotees who seek St. Joseph’s intercession
-      with faith.
-    </p>
-  </section>
+  </main>
 
-  <!-- New Chapel -->
-  <section id="chapel">
-    <h2>The New Chapel of St. Joseph</h2>
-    <p>
-      The foundation stone for the new chapel was laid on <strong>19 March 2012</strong> by
-      Shri Oommen Chandy and blessed by His Grace Dr. Joseph Kariyil, Bishop of Kochi.
-    </p>
+  <footer>
+    &copy; 2025 St. Antony’s Church, Kannamaly. All Rights Reserved.
+  </footer>
 
-    <p>
-      Built in Gothic, Roman, and contemporary styles, the chapel resembles a blossoming branch
-      held by St. Joseph. Spread over three floors with 5,000 sq. ft., it houses relics of
-      ten saints.
-    </p>
+  <script>
+    // Highlight nav link based on scroll position
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
 
-    <p>
-      Blessed in March 2015, this is the <strong>only chapel in Asia</strong> that enshrines the
-      relics of ten saints under one roof.
-    </p>
-  </section>
+    function changeActiveLink() {
+      let index = sections.length;
 
-</div>
+      while (--index && window.scrollY + 60 < sections[index].offsetTop) {}
 
-<footer>
-  &copy; 2025 St. Antony’s Church, Kannamaly. All Rights Reserved.
-</footer>
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+
+    window.addEventListener('scroll', changeActiveLink);
+  </script>
 
 </body>
 </html>
