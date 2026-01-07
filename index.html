@@ -16,15 +16,14 @@
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7fa;
       color: #333;
-      line-height: 1.7;
-      scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
     /* HERO */
     .hero {
       position: relative;
       width: 100%;
-      height: 90vh;
+      height: 60vh; /* smaller height for mobile-friendliness */
       overflow: hidden;
       background-color: #000;
     }
@@ -32,11 +31,10 @@
     .hero img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* cover ensures filling with possible cropping */
       object-position: center;
       display: block;
       filter: brightness(0.55);
-      /* darken for overlay readability */
     }
 
     .hero .overlay {
@@ -52,74 +50,90 @@
     }
 
     .hero .overlay h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin: 0 0 0.3em;
       font-weight: 700;
     }
 
     .hero .overlay p {
-      font-size: 1.6rem;
+      font-size: 1.25rem;
       margin: 0;
       font-style: italic;
       letter-spacing: 0.05em;
     }
 
-    /* NAVIGATION */
-    nav {
-      background: #083b66;
-      padding: 15px 10px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    /* TAB NAVIGATION */
+    .tabs {
+      max-width: 900px;
+      margin: 30px auto 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 0 10px;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 18px;
+    .tabs button {
+      background-color: #083b66;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1.05rem;
       font-weight: 600;
-      font-size: 1.1rem;
-      padding: 8px 0;
-      display: inline-block;
-      transition: color 0.3s ease;
-      border-bottom: 3px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      flex-grow: 1;
+      min-width: 120px;
+      max-width: 180px;
     }
 
-    nav a:hover,
-    nav a:focus,
-    nav a.active {
-      color: #f9a825;
-      border-bottom-color: #f9a825;
+    .tabs button:hover,
+    .tabs button:focus {
+      background-color: #0b59a1;
       outline: none;
     }
 
-    /* CONTAINER */
-    .container {
-      max-width: 1100px;
-      margin: 40px auto 80px;
-      padding: 0 20px;
-    }
-
-    /* SECTIONS */
-    section {
-      margin-bottom: 60px;
-    }
-
-    section h2 {
-      font-size: 2.3rem;
-      color: #0b4f8a;
-      border-bottom: 3px solid #0b4f8a;
-      padding-bottom: 8px;
-      margin-bottom: 24px;
+    .tabs button.active {
+      background-color: #f9a825;
+      color: #000;
       font-weight: 700;
+      cursor: default;
+      pointer-events: none;
+      box-shadow: 0 0 8px #f9a825;
     }
 
-    section p {
+    /* CONTENT AREA */
+    .tab-content {
+      max-width: 900px;
+      margin: 20px auto 60px;
+      background: white;
+      padding: 30px 25px;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       font-size: 1.15rem;
-      margin-bottom: 1em;
-      white-space: pre-line; /* preserve line breaks if any */
+      line-height: 1.7;
+      color: #222;
+      min-height: 300px;
+    }
+
+    .tab-content h2 {
+      color: #0b4f8a;
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 2rem;
+      border-bottom: 3px solid #0b4f8a;
+      padding-bottom: 6px;
+    }
+
+    /* Hide inactive tabs */
+    .tab-content > div {
+      display: none;
+    }
+
+    .tab-content > div.active {
+      display: block;
     }
 
     /* FOOTER */
@@ -134,28 +148,33 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
+      .hero {
+        height: 45vh;
+      }
       .hero .overlay h1 {
-        font-size: 2.4rem;
+        font-size: 2rem;
       }
       .hero .overlay p {
-        font-size: 1.1rem;
-      }
-      nav a {
-        margin: 0 10px;
         font-size: 1rem;
       }
-      .container {
-        margin: 30px auto 60px;
+      .tabs button {
+        min-width: 100px;
+        max-width: 140px;
+        font-size: 0.95rem;
       }
-      section h2 {
-        font-size: 1.8rem;
+      .tab-content {
+        padding: 20px 15px;
+        font-size: 1rem;
+      }
+      .tab-content h2 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <div class="hero" role="img" aria-label="Image of St. Antony’s Church, Kannamaly">
     <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly" />
     <div class="overlay">
@@ -164,20 +183,19 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#history">History</a>
-    <a href="#nercha">Nercha Sadya</a>
-    <a href="#statue">Miraculous Statue</a>
-    <a href="#chapel">St. Joseph Chapel</a>
-  </nav>
+  <!-- TAB NAVIGATION -->
+  <div class="tabs" role="tablist" aria-label="Home page sections tabs">
+    <button role="tab" aria-selected="true" aria-controls="tab-home" id="tab-btn-home" class="active">Home</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-history" id="tab-btn-history">History</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-nercha" id="tab-btn-nercha">Nercha Sadya</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-statue" id="tab-btn-statue">Miraculous Statue</button>
+    <button role="tab" aria-selected="false" aria-controls="tab-chapel" id="tab-btn-chapel">St. Joseph Chapel</button>
+  </div>
 
-  <!-- MAIN CONTENT -->
-  <main class="container">
+  <!-- TAB CONTENT -->
+  <main class="tab-content">
 
-    <!-- HOME -->
-    <section id="home" tabindex="-1">
+    <div id="tab-home" role="tabpanel" aria-labelledby="tab-btn-home" class="active">
       <h2>Home</h2>
       <p>
         St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
@@ -196,10 +214,9 @@
         The Miraculous Statue of St. Joseph, brought from Spain in 1905, remains a treasured
         symbol of divine grace for the faithful.
       </p>
-    </section>
+    </div>
 
-    <!-- HISTORY -->
-    <section id="history" tabindex="-1">
+    <div id="tab-history" role="tabpanel" aria-labelledby="tab-btn-history">
       <h2>History of St. Antony’s Church, Kannamaly</h2>
       <p>
         The first Kannamaly church was established in <strong>1745</strong> under the patronage of
@@ -217,10 +234,9 @@
         The church was solemnly blessed on <strong>22 November 1942</strong> and is now revered under
         the patronage of <strong>St. Antony</strong>.
       </p>
-    </section>
+    </div>
 
-    <!-- NERCHA SADYA -->
-    <section id="nercha" tabindex="-1">
+    <div id="tab-nercha" role="tabpanel" aria-labelledby="tab-btn-nercha">
       <h2>History of St. Joseph Nercha Sadya</h2>
       <p>
         Originating in 1905 during a devastating cholera outbreak, the Nercha Sadya began after a
@@ -231,10 +247,9 @@
         Through the powerful intercession of St. Joseph, the epidemic subsided, and Kannamaly has
         since remained protected. The feast is observed every year on <strong>19 March</strong>.
       </p>
-    </section>
+    </div>
 
-    <!-- MIRACULOUS STATUE -->
-    <section id="statue" tabindex="-1">
+    <div id="tab-statue" role="tabpanel" aria-labelledby="tab-btn-statue">
       <h2>Miraculous Statue of St. Joseph</h2>
       <p>
         Brought from Spain in 1905, the statue miraculously remained at Kannamaly after a ship
@@ -245,10 +260,9 @@
         The statue soon became known for miracles, including the healing of cattle, and was later
         installed reverently in the church.
       </p>
-    </section>
+    </div>
 
-    <!-- NEW CHAPEL -->
-    <section id="chapel" tabindex="-1">
+    <div id="tab-chapel" role="tabpanel" aria-labelledby="tab-btn-chapel">
       <h2>The New Chapel of St. Joseph</h2>
       <p>
         The foundation stone was laid on <strong>19 March 2012</strong> by Shri Oommen Chandy and blessed
@@ -259,7 +273,7 @@
         Blessed in March 2015, the chapel uniquely houses relics of ten saints and stands as the only
         such chapel in Asia.
       </p>
-    </section>
+    </div>
 
   </main>
 
@@ -268,20 +282,26 @@
   </footer>
 
   <script>
-    // Highlight nav link based on scroll position
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
+    // Tab switching logic
+    const tabButtons = document.querySelectorAll(".tabs button");
+    const tabPanels = document.querySelectorAll(".tab-content > div");
 
-    function changeActiveLink() {
-      let index = sections.length;
+    tabButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Remove active states
+        tabButtons.forEach((b) => {
+          b.classList.remove("active");
+          b.setAttribute("aria-selected", "false");
+          document.getElementById(b.getAttribute("aria-controls")).classList.remove("active");
+        });
 
-      while (--index && window.scrollY + 60 < sections[index].offsetTop) {}
-
-      navLinks.forEach((link) => link.classList.remove('active'));
-      navLinks[index].classList.add('active');
-    }
-
-    window.addEventListener('scroll', changeActiveLink);
+        // Add active to clicked button and corresponding panel
+        btn.classList.add("active");
+        btn.setAttribute("aria-selected", "true");
+        const panelId = btn.getAttribute("aria-controls");
+        document.getElementById(panelId).classList.add("active");
+      });
+    });
   </script>
 
 </body>
