@@ -23,7 +23,7 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 60vh; /* smaller height for mobile-friendliness */
+      height: 60vh; /* Adjusted for mobile-friendliness */
       overflow: hidden;
       background-color: #000;
     }
@@ -31,9 +31,10 @@
     .hero img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* cover ensures filling with possible cropping */
+      object-fit: contain; /* Show full image */
       object-position: center;
       display: block;
+      background-color: #000; /* background behind image */
       filter: brightness(0.55);
     }
 
@@ -176,7 +177,7 @@
 
   <!-- HERO -->
   <div class="hero" role="img" aria-label="Image of St. Antony’s Church, Kannamaly">
-    <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly" />
+    <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly" loading="lazy" />
     <div class="overlay">
       <h1>St. Antony’s Church, Kannamaly</h1>
       <p>Faith • History • Devotion</p>
