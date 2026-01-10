@@ -1,247 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>St. Antony’s Church, Kannamaly</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>St. Antony’s Church, Kannamaly</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, sans-serif;
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.8;
-}
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.7;
+    }
 
-/* LANGUAGE TOGGLE */
-body.malayalam .lang-en { display: none; }
-body:not(.malayalam) .lang-ml { display: none; }
+    /* HERO */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      background-color: #000;
+    }
 
-.lang-ml {
-  font-family: "Noto Serif Malayalam", serif;
-}
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0.55);
+    }
 
-/* HERO */
-.hero {
-  position: relative;
-  height: 60vh;
-  background: #000;
-}
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(0.55);
-}
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-}
-.overlay h1 {
-  font-size: 3rem;
-}
-.lang-btn {
-  margin-top: 15px;
-  padding: 12px 28px;
-  font-size: 1rem;
-  background: #f9a825;
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    }
 
-/* TABS */
-.tabs {
-  max-width: 1000px;
-  margin: 30px auto 10px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.tabs button {
-  padding: 10px 16px;
-  border: none;
-  background: #083b66;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-}
-.tabs button.active {
-  background: #f9a825;
-  color: #000;
-}
+    .overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3em;
+    }
 
-/* CONTENT */
-.tab-content {
-  max-width: 1000px;
-  margin: 20px auto 60px;
-  background: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
-.tab-content > div { display: none; }
-.tab-content > div.active { display: block; }
+    .overlay p {
+      font-size: 1.2rem;
+      font-style: italic;
+      letter-spacing: 0.05em;
+    }
 
-h2 {
-  color: #0b4f8a;
-  border-bottom: 3px solid #0b4f8a;
-  padding-bottom: 6px;
-}
+    /* TABS */
+    .tabs {
+      max-width: 900px;
+      margin: 30px auto 10px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 10px;
+    }
 
-footer {
-  background: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 25px;
-}
-</style>
+    .tabs button {
+      background-color: #083b66;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      min-width: 130px;
+    }
+
+    .tabs button:hover {
+      background-color: #0b59a1;
+    }
+
+    .tabs button.active {
+      background-color: #f9a825;
+      color: #000;
+      pointer-events: none;
+      font-weight: 700;
+    }
+
+    /* CONTENT */
+    .tab-content {
+      max-width: 900px;
+      margin: 20px auto 60px;
+      background: white;
+      padding: 30px 25px;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+    }
+
+    .tab-content h2 {
+      color: #0b4f8a;
+      margin-top: 0;
+      border-bottom: 3px solid #0b4f8a;
+      padding-bottom: 6px;
+    }
+
+    .tab-content > div {
+      display: none;
+    }
+
+    .tab-content > div.active {
+      display: block;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .overlay h1 {
+        font-size: 2rem;
+      }
+      .overlay p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <!-- HERO -->
 <div class="hero">
-  <img src="kannamaly.jpg" alt="St. Antony’s Church">
+  <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly">
   <div class="overlay">
     <h1>St. Antony’s Church, Kannamaly</h1>
     <p>Faith • History • Devotion</p>
-    <button id="langToggle" class="lang-btn">മലയാളം കാണുക</button>
   </div>
 </div>
 
 <!-- TABS -->
 <div class="tabs">
-  <button class="active" data-tab="home">Home</button>
-  <button data-tab="history">History</button>
-  <button data-tab="nercha">Nercha Sadya</button>
-  <button data-tab="statue">Miraculous Statue</button>
-  <button data-tab="chapel">St. Joseph Shrine</button>
+  <button class="active" aria-controls="tab-home">Home</button>
+  <button aria-controls="tab-history">History</button>
+  <button aria-controls="tab-nercha">Nercha Sadya</button>
+  <button aria-controls="tab-statue">Miraculous Statue</button>
+  <button aria-controls="tab-chapel">St. Joseph Shrine</button>
 </div>
 
 <!-- CONTENT -->
 <main class="tab-content">
 
-<!-- HOME -->
-<div id="home" class="active">
-  <div class="lang-en">
+  <!-- HOME -->
+  <div id="tab-home" class="active">
     <h2>Home</h2>
-    <p>St. Antony’s Church, Kannamaly is a vibrant parish with a sacred heritage spanning over 281 years. Rooted deeply in faith, devotion, and community life, the Church has stood strong through centuries of change and challenge.</p>
-    <p>The parish has been shaped by resilience, prayer, and unwavering trust in God. Through sea erosion, epidemics, and social transformation, the faithful of Kannamaly have preserved their spiritual identity.</p>
-    <p>Today, the Church stands as a living testimony of God’s grace and the loving intercession of St. Antony, serving as a spiritual home for generations.</p>
+
+    <p>
+      St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage
+      spanning over 281 years. Rooted in devotion and shaped by resilience through
+      history, the Church stands today as a living testimony of God’s grace and the
+      loving intercession of St. Antony, serving as a spiritual home for generations
+      of faithful.
+    </p>
+
+    <p>
+      The Kannamaly St. Joseph Nercha Sadya, observed since 1905, commemorates a
+      miraculous healing from a cholera outbreak. Held annually on 19th March, the
+      feast remains a powerful expression of faith and thanksgiving.
+    </p>
+
+    <p>
+      The Miraculous Statue of St. Joseph of Kannamaly, brought from Spain in 1905,
+      is a treasured sign of God’s grace, drawing countless devotees who seek his
+      powerful intercession.
+    </p>
   </div>
 
-  <div class="lang-ml">
-    <h2>ഹോം</h2>
-    <p>281 വർഷത്തിലധികം നീണ്ടുനിൽക്കുന്ന സമ്പന്നമായ ആത്മീയ പൈതൃകമുള്ള ഒരു സജീവ വിശ്വാസ സമൂഹമാണ് കണ്ണമാലിയിലെ സെന്റ് ആന്റണീസ് പള്ളി.</p>
-    <p>കടലാക്രമണങ്ങളും മഹാമാരികളും സാമൂഹിക മാറ്റങ്ങളും നേരിട്ടിട്ടും വിശ്വാസത്തിൽ ഉറച്ചുനിന്ന ജനങ്ങളുടെ ആത്മീയ കേന്ദ്രമായി ഈ പള്ളി നിലകൊണ്ടു.</p>
-    <p>വിശുദ്ധ ആന്റണിയുടെ സ്നേഹപരമായ മദ്ധ്യസ്ഥതയുടെയും ദൈവകൃപയുടെയും ജീവിക്കുന്ന സാക്ഷ്യമായി ഇന്നും ഈ ദേവാലയം നിലകൊള്ളുന്നു.</p>
-  </div>
-</div>
+  <!-- HISTORY -->
+  <div id="tab-history">
+    <h2>History of St. Antony’s Church, Kannamaly</h2>
 
-<!-- HISTORY -->
-<div id="history">
-  <div class="lang-en">
-    <h2>History</h2>
-    <p>The history of St. Antony’s Church, Kannamaly dates back to 1745 when the first Church was constructed under the patronage of Our Lady of the Immaculate Conception.</p>
-    <p>Due to severe sea erosion, the Church was destroyed in 1795, and a second Church was built in 1796. Continued erosion again caused damage in the early 1900s.</p>
-    <p>In 1873, Kannamaly became an independent parish. The foundation stone for the present Church was laid on June 13, 1909, and the Church was solemnly blessed on November 22, 1942.</p>
-  </div>
+    <p>
+      St. Antony’s Church, Kannamaly has a rich and enduring history spanning over
+      281 years.
+    </p>
 
-  <div class="lang-ml">
-    <h2>ചരിത്രം</h2>
-    <p>1745-ൽ നിർമലഗർഭ മാതാവിന്റെ സംരക്ഷണത്തിൽ സ്ഥാപിച്ച ദേവാലയത്തിലാണ് കണ്ണമാലി സെന്റ് ആന്റണീസ് പള്ളിയുടെ ചരിത്രം ആരംഭിക്കുന്നത്.</p>
-    <p>1795-ൽ കടലാക്രമണത്തിൽ പള്ളി തകർന്നതിനെ തുടർന്ന് 1796-ൽ രണ്ടാം പള്ളി പണിതു. പിന്നീട് വീണ്ടും കടലാക്രമണങ്ങൾ നാശം വിതച്ചു.</p>
-    <p>1873-ൽ കണ്ണമാലി സ്വതന്ത്ര ഇടവകയായി. 1909 ജൂൺ 13-ന് അടിത്തറക്കല്ലിട്ട പള്ളി 1942 നവംബർ 22-ന് ആശീർവദിക്കപ്പെട്ടു.</p>
-  </div>
-</div>
+    <p>
+      The first Church was established in 1745, about 3 km west of the present Church
+      site, under the patronage of Our Lady of Immaculate Conception. This Church was
+      destroyed by a sea erosion in 1795, following which a second Church was
+      constructed in 1796.
+    </p>
 
-<!-- NERCHA -->
-<div id="nercha">
-  <div class="lang-en">
-    <h2>Nercha Sadya</h2>
-    <p>The St. Joseph Nercha Sadya originated in 1905 during a severe cholera epidemic that threatened the lives of the parishioners.</p>
-    <p>Following a divine vision received by Rev. Fr. Joseph Suarez, the faithful prepared a Nercha Sadya in honor of St. Joseph.</p>
-    <p>After the offering, the epidemic subsided completely. Since then, the Nercha Sadya is observed every year on March 19 with deep devotion.</p>
-  </div>
+    <p>
+      In 1873, Kannamaly Church was separated from the Mundamvely parish and declared
+      as an independent parish. A severe sea erosion in 1905 caused partial damage
+      to the Church, and the destructive sea erosion of 1908 led to its complete ruin.
+    </p>
 
-  <div class="lang-ml">
-    <h2>നേർച്ച സദ്യ</h2>
-    <p>1905-ലെ ഭീകരമായ കോളറ മഹാമാരിയുടെ കാലഘട്ടത്തിലാണ് സെന്റ് ജോസഫിന്റെ നേർച്ച സദ്യ ആരംഭിച്ചത്.</p>
-    <p>റവ. ഫാ. ജോസഫ് സുവാരസിന് ലഭിച്ച ദിവ്യ ദർശനത്തെ തുടർന്ന് വിശ്വാസികൾ നേർച്ച സദ്യ അർപ്പിച്ചു.</p>
-    <p>സദ്യയ്ക്ക് ശേഷം മഹാമാരി പൂർണ്ണമായും അവസാനിച്ചു. അതിനുശേഷം ഓരോ വർഷവും മാർച്ച് 19-ന് നേർച്ച സദ്യ നടത്തുന്നു.</p>
-  </div>
-</div>
+    <p>
+      On June 13, 1909, the foundation stone for the third Church was laid by Very
+      Rev. Fr. Antony Padua, Vicar Forane and Parish Priest of St. Lawrence Church,
+      Edacochin, at the present location.
+    </p>
 
-<!-- STATUE -->
-<div id="statue">
-  <div class="lang-en">
-    <h2>Miraculous Statue</h2>
-    <p>The Miraculous Statue of St. Joseph was brought from Spain by Carmelite priests in 1905.</p>
-    <p>When the ship transporting the statue grounded near Kannamaly, one statue was unloaded and mysteriously could not be moved again.</p>
-    <p>The statue later became a source of countless miracles, healings, and answered prayers.</p>
+    <p>
+      A temporary palm-leaf shed was erected over the completed foundation, where
+      liturgical services were conducted. On July 2, 1912, a Cemetery Chapel was
+      built, and the services were shifted there.
+    </p>
+
+    <p>
+      The present Church, which was built following the model of St. Paul’s Basilica
+      of Rome, was solemnly blessed on November 22, 1942 by His Excellency
+      Dr. Jose Vieira Alvernaz.
+    </p>
+
+    <p>
+      While the Church was originally dedicated to Our Lady of Immaculate
+      Conception, it is now known and revered under the patronage of St. Antony.
+    </p>
   </div>
 
-  <div class="lang-ml">
-    <h2>അത്ഭുത പ്രതിമ</h2>
-    <p>1905-ൽ കാർമലൈറ്റ് വൈദികർ സ്പെയിനിൽ നിന്ന് കൊണ്ടുവന്നതാണ് സെന്റ് ജോസഫിന്റെ ഈ പ്രതിമ.</p>
-    <p>കപ്പൽ കണ്ണമാലിക്ക് സമീപം കുടുങ്ങിയപ്പോൾ കരയിലിറക്കിയ പ്രതിമ പിന്നീട് മാറ്റാൻ സാധിച്ചില്ല.</p>
-    <p>ഈ പ്രതിമ അനേകം അത്ഭുതങ്ങൾക്കും രോഗമുക്തികൾക്കും കാരണമായി.</p>
-  </div>
-</div>
+  <!-- NERCHA -->
+  <div id="tab-nercha">
+    <h2>History of the Kannamaly St. Joseph’s Feast and Nercha Sadya</h2>
 
-<!-- CHAPEL -->
-<div id="chapel">
-  <div class="lang-en">
-    <h2>St. Joseph Shrine</h2>
-    <p>The foundation stone for the St. Joseph Shrine was laid on March 18, 2012.</p>
-    <p>The shrine was blessed on March 8, 2015 and houses relics of ten saints.</p>
-    <p>Today, the shrine stands as a powerful pilgrimage center drawing thousands of devotees.</p>
+    <p>
+      The Nercha Sadya Feast of St. Joseph at Kannamaly is a sacred tradition with a
+      history of over 121 years. Its origin dates back to 1905, a time when Kannamaly
+      faced a devastating sea erosion followed by a severe outbreak of cholera.
+    </p>
+
+    <p>
+      The disease, which spread rapidly through contaminated food and water,
+      claimed the lives of thousands, leaving the region in deep distress.
+    </p>
+
+    <p>
+      In this period of suffering, Rev. Fr. Joseph Suarez, the then parish priest of
+      Kannamaly Church, was blessed with a divine vision in which St. Joseph appeared
+      along with the Infant Jesus and the Blessed Virgin Mary.
+    </p>
+
+    <p>
+      Inspired by this heavenly revelation, the faithful observed the Feast of
+      St. Joseph on March 19, 1905 in a special manner. Food prepared in the homes of
+      the people was brought to the Church courtyard, blessed, and shared among the
+      faithful.
+    </p>
+
+    <p>
+      The blessed food was also distributed to those who were sick and unable to
+      come to the church.
+    </p>
+
+    <p>
+      By God’s grace and through the powerful intercession of St. Joseph, a
+      miraculous healing followed. The cholera epidemic was brought under control,
+      and the sick were restored to health after partaking of the blessed meal.
+    </p>
+
+    <p>
+      From that day onwards, Kannamaly has been spared from cholera.
+    </p>
+
+    <p>
+      Since then, every year on March 19, the Feast of St. Joseph is solemnly
+      celebrated with the Nercha Sadya. Even today, lakhs of devotees gather at
+      Kannamaly with deep faith.
+    </p>
   </div>
 
-  <div class="lang-ml">
-    <h2>സെന്റ് ജോസഫ് തീർത്ഥാടനകേന്ദ്രം</h2>
-    <p>2012 മാർച്ച് 18-നാണ് സെന്റ് ജോസഫ് തീർത്ഥാടനകേന്ദ്രത്തിന്റെ അടിത്തറക്കല്ലിട്ടത്.</p>
-    <p>2015 മാർച്ച് 8-ന് ആശീർവദിക്കപ്പെട്ട ഈ കേന്ദ്രത്തിൽ പത്ത് വിശുദ്ധരുടെ തിരുശേഷിപ്പുകൾ ഉണ്ട്.</p>
-    <p>ഇന്ന് ഈ കേന്ദ്രം ആയിരക്കണക്കിന് ഭക്തരെ ആകർഷിക്കുന്ന തീർത്ഥാടനകേന്ദ്രമാണ്.</p>
+  <!-- STATUE -->
+  <div id="tab-statue">
+    <h2>History of the Miraculous Statue of St. Joseph of Kannamaly</h2>
+
+    <p>
+      The miraculous statue of St. Joseph venerated at Kannamaly was brought from
+      Spain by Carmelite priests through a sea voyage.
+    </p>
+
+    <p>
+      The priests were transporting three statues of St. Joseph intended for
+      churches in the southern region of India.
+    </p>
+
+    <p>
+      When the ship reached the western side of Kannamaly, the sail suddenly failed
+      to catch the wind and the vessel came to a halt. It was found that the ship had
+      become firmly grounded.
+    </p>
+
+    <p>
+      To reduce the weight, one statue of St. Joseph—whose right leg had already been
+      damaged during loading in Spain—was taken ashore. Immediately, the ship floated
+      free.
+    </p>
+
+    <p>
+      Repeated attempts to reload the statue were unsuccessful. Recognizing this as
+      a sign of divine will, the priests entrusted the statue to the people of
+      Kannamaly.
+    </p>
+
+    <p>
+      The statue, wrapped in straw, was kept aside with the intention of installing
+      it in the new Church and was later forgotten.
+    </p>
+
+    <p>
+      Around the same period, a severe diarrhoeal illness spread among cattle. A
+      woman took a piece of straw from the statue and gave it to her sick cow, which
+      recovered miraculously.
+    </p>
+
+    <p>
+      The straw was given to other affected cattle, and all of them were healed.
+    </p>
+
+    <p>
+      Recognizing the miraculous nature of the statue, it was brought out, the
+      broken leg was repaired, and it was reverently installed in the Church.
+    </p>
+
+    <p>
+      In 1946, during the tenure of Rev. Fr. Victorinus K.V., a Chapel was built, and
+      the statue was installed there.
+    </p>
   </div>
-</div>
+
+  <!-- CHAPEL -->
+  <div id="tab-chapel">
+    <h2>The Miraculous Shrine of St. Joseph</h2>
+
+    <p>
+      The Chapel originally established in 1946 had borne the marks of time, and the
+      faithful longed for a new Chapel dedicated to St. Joseph.
+    </p>
+
+    <p>
+      The foundation stone for the Miraculous Shrine of St. Joseph was laid on March
+      18, 2012 by the then Chief Minister of Kerala, Shri Oommen Chandy, and was
+      blessed by His Excellency Rt. Rev. Dr. Joseph Kariyil, Bishop of Cochin.
+    </p>
+
+    <p>
+      Incorporating Gothic, Roman, and contemporary architectural styles, the Shrine
+      is artistically designed in the form of a blossoming branch held in the hands
+      of St. Joseph.
+    </p>
+
+    <p>
+      Built over three floors with a total area of 5,000 square feet, the Shrine
+      houses ten smaller chapels containing the sacred relics of ten saints.
+    </p>
+
+    <p>
+      The Miraculous Shrine of St. Joseph was solemnly blessed on March 8, 2015.
+    </p>
+
+    <p>
+      This Shrine is the only one in Asia that enshrines the sacred relics of ten
+      saints under one roof.
+    </p>
+  </div>
 
 </main>
 
 <footer>
-&copy; 2025 St. Antony’s Church, Kannamaly
+  &copy; 2025 St. Antony’s Church, Kannamaly. All Rights Reserved.
 </footer>
 
 <script>
-/* TAB SWITCH */
-document.querySelectorAll(".tabs button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll(".tab-content > div").forEach(d => d.classList.remove("active"));
-    btn.classList.add("active");
-    document.getElementById(btn.dataset.tab).classList.add("active");
-  });
-});
+  const buttons = document.querySelectorAll(".tabs button");
+  const panels = document.querySelectorAll(".tab-content > div");
 
-/* LANGUAGE TOGGLE */
-document.getElementById("langToggle").addEventListener("click", () => {
-  document.body.classList.toggle("malayalam");
-  document.getElementById("langToggle").textContent =
-    document.body.classList.contains("malayalam")
-      ? "View in English"
-      : "മലയാളം കാണുക";
-});
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      button.classList.add("active");
+      document.getElementById(button.getAttribute("aria-controls")).classList.add("active");
+    });
+  });
 </script>
 
 </body>
