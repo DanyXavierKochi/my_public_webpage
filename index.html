@@ -15,6 +15,25 @@
     background: #f5f7fa;
     color: #333;
     line-height: 1.7;
+    .lang-btn {
+  margin-top: 15px;
+  padding: 12px 26px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  background-color: #f9a825;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lang-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+
   }
 
   .hero {
@@ -30,13 +49,16 @@
     filter: brightness(0.55);
   }
 
-  .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
+ <div class="overlay">
+  <h1>St. Antony’s Church, Kannamaly</h1>
+  <p>Faith • History • Devotion</p>
+
+  <!-- LANGUAGE TOGGLE BUTTON -->
+  <button id="langToggle" class="lang-btn">
+    മലയാളം കാണുക
+  </button>
+</div>
+
   }
 
   .overlay h1 {
@@ -242,7 +264,27 @@
     document.querySelectorAll(".lang-ml").forEach(el => el.style.display = isMalayalam ? "block" : "none");
     toggleBtn.textContent = isMalayalam ? "View in English" : "മലയാളം കാണുക";
   });
+  <script>
+  let isMalayalam = false;
+
+  const toggleBtn = document.getElementById("langToggle");
+
+  toggleBtn.addEventListener("click", () => {
+    isMalayalam = !isMalayalam;
+
+    document.querySelectorAll(".lang-en")
+      .forEach(el => el.style.display = isMalayalam ? "none" : "block");
+
+    document.querySelectorAll(".lang-ml")
+      .forEach(el => el.style.display = isMalayalam ? "block" : "none");
+
+    toggleBtn.textContent = isMalayalam
+      ? "View in English"
+      : "മലയാളം കാണുക";
+  });
+</script>
 </script>
 
 </body>
 </html>
+
