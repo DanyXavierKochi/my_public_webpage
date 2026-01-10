@@ -6,10 +6,7 @@
   <title>St. Antony’s Church, Kannamaly</title>
 
   <style>
-    /* Reset & base */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -19,11 +16,10 @@
       line-height: 1.6;
     }
 
-    /* HERO */
     .hero {
       position: relative;
       width: 100%;
-      height: 60vh; /* Adjusted for mobile-friendliness */
+      height: 60vh;
       overflow: hidden;
       background-color: #000;
     }
@@ -31,279 +27,227 @@
     .hero img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Show full image */
-      object-position: center;
-      display: block;
-      background-color: #000; /* background behind image */
+      object-fit: contain;
       filter: brightness(0.55);
     }
 
-    .hero .overlay {
+    .overlay {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
       text-align: center;
-      padding: 0 20px;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-      max-width: 90vw;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     }
 
-    .hero .overlay h1 {
+    .overlay h1 {
       font-size: 3rem;
-      margin: 0 0 0.3em;
-      font-weight: 700;
+      margin-bottom: 0.3em;
     }
 
-    .hero .overlay p {
-      font-size: 1.25rem;
-      margin: 0;
+    .overlay p {
+      font-size: 1.2rem;
       font-style: italic;
       letter-spacing: 0.05em;
     }
 
-    /* TAB NAVIGATION */
     .tabs {
       max-width: 900px;
       margin: 30px auto 10px;
       display: flex;
-      justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
-      padding: 0 10px;
+      justify-content: center;
     }
 
     .tabs button {
-      background-color: #083b66;
+      background: #083b66;
       color: white;
       border: none;
       padding: 10px 18px;
-      font-size: 1.05rem;
       font-weight: 600;
       border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      flex-grow: 1;
-      min-width: 120px;
-      max-width: 180px;
-    }
-
-    .tabs button:hover,
-    .tabs button:focus {
-      background-color: #0b59a1;
-      outline: none;
     }
 
     .tabs button.active {
-      background-color: #f9a825;
+      background: #f9a825;
       color: #000;
-      font-weight: 700;
-      cursor: default;
       pointer-events: none;
-      box-shadow: 0 0 8px #f9a825;
     }
 
-    /* CONTENT AREA */
     .tab-content {
       max-width: 900px;
       margin: 20px auto 60px;
       background: white;
-      padding: 30px 25px;
+      padding: 30px;
       border-radius: 8px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      font-size: 1.15rem;
-      line-height: 1.7;
-      color: #222;
-      min-height: 300px;
     }
 
     .tab-content h2 {
       color: #0b4f8a;
-      margin-top: 0;
-      margin-bottom: 18px;
-      font-weight: 700;
-      font-size: 2rem;
       border-bottom: 3px solid #0b4f8a;
       padding-bottom: 6px;
     }
 
-    /* Hide inactive tabs */
-    .tab-content > div {
-      display: none;
-    }
+    .tab-content > div { display: none; }
+    .tab-content > div.active { display: block; }
 
-    .tab-content > div.active {
-      display: block;
-    }
-
-    /* FOOTER */
     footer {
-      background-color: #222;
+      background: #222;
       color: #ccc;
       text-align: center;
-      padding: 25px 15px;
-      font-size: 0.95rem;
-      letter-spacing: 0.05em;
+      padding: 25px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
-      .hero {
-        height: 45vh;
-      }
-      .hero .overlay h1 {
-        font-size: 2rem;
-      }
-      .hero .overlay p {
-        font-size: 1rem;
-      }
-      .tabs button {
-        min-width: 100px;
-        max-width: 140px;
-        font-size: 0.95rem;
-      }
-      .tab-content {
-        padding: 20px 15px;
-        font-size: 1rem;
-      }
-      .tab-content h2 {
-        font-size: 1.6rem;
-      }
+      .overlay h1 { font-size: 2rem; }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- HERO -->
-  <div class="hero" role="img" aria-label="Image of St. Antony’s Church, Kannamaly">
-    <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly" loading="lazy" />
-    <div class="overlay">
-      <h1>St. Antony’s Church, Kannamaly</h1>
-      <p>Faith • History • Devotion</p>
-    </div>
+<div class="hero">
+  <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly">
+  <div class="overlay">
+    <h1>St. Antony’s Church, Kannamaly</h1>
+    <p>Faith • History • Devotion</p>
   </div>
+</div>
 
-  <!-- TAB NAVIGATION -->
-  <div class="tabs" role="tablist" aria-label="Home page sections tabs">
-    <button role="tab" aria-selected="true" aria-controls="tab-home" id="tab-btn-home" class="active">Home</button>
-    <button role="tab" aria-selected="false" aria-controls="tab-history" id="tab-btn-history">History</button>
-    <button role="tab" aria-selected="false" aria-controls="tab-nercha" id="tab-btn-nercha">Nercha Sadya</button>
-    <button role="tab" aria-selected="false" aria-controls="tab-statue" id="tab-btn-statue">Miraculous Statue</button>
-    <button role="tab" aria-selected="false" aria-controls="tab-chapel" id="tab-btn-chapel">St. Joseph Chapel</button>
-  </div>
+<div class="tabs">
+  <button class="active" aria-controls="home">Home</button>
+  <button aria-controls="history">History</button>
+  <button aria-controls="nercha">Nercha Sadya</button>
+  <button aria-controls="statue">Miraculous Statue</button>
+  <button aria-controls="chapel">St. Joseph Shrine</button>
+</div>
 
-  <!-- TAB CONTENT -->
-  <main class="tab-content">
+<main class="tab-content">
 
-    <div id="tab-home" role="tabpanel" aria-labelledby="tab-btn-home" class="active">
-      <h2>Home</h2>
-      <p>
-        St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
-        <strong>267 years</strong>. Rooted in devotion and shaped by resilience through history,
-        the church stands today as a living testimony of God’s grace and the loving intercession
-        of St. Antony, serving as a spiritual home for generations of faithful.
-      </p>
+<div id="home" class="active">
+  <h2>Home</h2>
+  <p>
+    St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
+    <strong>281 years</strong>. Rooted in deep devotion and shaped by resilience through centuries
+    of trials, the Church stands today as a living testimony of God’s grace and the loving
+    intercession of St. Antony.
+  </p>
 
-      <p>
-        The Kannamaly St. Joseph Nercha Sadya, observed since <strong>1905</strong>, commemorates
-        a miraculous healing from a cholera outbreak and continues to draw lakhs of devotees
-        every year on <strong>19 March</strong>.
-      </p>
+  <p>
+    The Kannamaly St. Joseph Nercha Sadya, observed annually on <strong>19th March</strong> since
+    1905, commemorates a miraculous healing from a devastating cholera outbreak and remains
+    a powerful expression of faith and thanksgiving.
+  </p>
 
-      <p>
-        The Miraculous Statue of St. Joseph, brought from Spain in 1905, remains a treasured
-        symbol of divine grace for the faithful.
-      </p>
-    </div>
+  <p>
+    The Miraculous Statue of St. Joseph, brought from Spain in 1905, continues to draw lakhs
+    of devotees who seek his powerful intercession.
+  </p>
+</div>
 
-    <div id="tab-history" role="tabpanel" aria-labelledby="tab-btn-history">
-      <h2>History of St. Antony’s Church, Kannamaly</h2>
-      <p>
-        The first Kannamaly church was established in <strong>1745</strong> under the patronage of
-        Our Lady of the Immaculate Conception. It was destroyed in a sea attack in 1795, leading
-        to the construction of a second church in 1796.
-      </p>
+<div id="history">
+  <h2>History of St. Antony’s Church, Kannamaly</h2>
+  <p>
+    The first church at Kannamaly was established in <strong>1745</strong>, about 3 km west of the
+    present site, under the patronage of Our Lady of the Immaculate Conception. It was destroyed
+    by sea erosion in 1795, after which a second church was constructed in 1796.
+  </p>
 
-      <p>
-        In <strong>1873</strong>, Kannamaly became an independent parish. Severe sea attacks in 1905 and 1908
-        caused major destruction, after which the present church foundation was laid on
-        <strong>13 June 1909</strong>.
-      </p>
+  <p>
+    In <strong>1873</strong>, Kannamaly was declared an independent parish. Severe sea erosions in
+    1905 and 1908 caused extensive damage and complete ruin of the church.
+  </p>
 
-      <p>
-        The church was solemnly blessed on <strong>22 November 1942</strong> and is now revered under
-        the patronage of <strong>St. Antony</strong>.
-      </p>
-    </div>
+  <p>
+    The foundation stone for the present church was laid on <strong>13 June 1909</strong>.
+    Built in the model of St. Paul’s Basilica, Rome, it was solemnly blessed on
+    <strong>22 November 1942</strong>. Though originally dedicated to Our Lady of the Immaculate
+    Conception, it is now revered under the patronage of <strong>St. Antony</strong>.
+  </p>
+</div>
 
-    <div id="tab-nercha" role="tabpanel" aria-labelledby="tab-btn-nercha">
-      <h2>History of St. Joseph Nercha Sadya</h2>
-      <p>
-        Originating in 1905 during a devastating cholera outbreak, the Nercha Sadya began after a
-        divine vision received by the parish priest, Fr. Joseph Swares.
-      </p>
+<div id="nercha">
+  <h2>History of St. Joseph Nercha Sadya</h2>
+  <p>
+    The Nercha Sadya originated in <strong>1905</strong> during a time of devastating sea erosion
+    and a deadly cholera epidemic. Rev. Fr. <strong>Joseph Suarez</strong>, the parish priest,
+    received a divine vision of St. Joseph with the Infant Jesus and the Blessed Virgin Mary.
+  </p>
 
-      <p>
-        Through the powerful intercession of St. Joseph, the epidemic subsided, and Kannamaly has
-        since remained protected. The feast is observed every year on <strong>19 March</strong>.
-      </p>
-    </div>
+  <p>
+    Following this, the faithful observed the Feast of St. Joseph by preparing food in their
+    homes, blessing it at the church, and sharing it with all—including the sick.
+    Miraculously, the cholera outbreak subsided.
+  </p>
 
-    <div id="tab-statue" role="tabpanel" aria-labelledby="tab-btn-statue">
-      <h2>Miraculous Statue of St. Joseph</h2>
-      <p>
-        Brought from Spain in 1905, the statue miraculously remained at Kannamaly after a ship
-        carrying it became grounded.
-      </p>
+  <p>
+    Since then, Kannamaly has remained free from cholera, and the Nercha Sadya continues
+    every year on <strong>19th March</strong>.
+  </p>
+</div>
 
-      <p>
-        The statue soon became known for miracles, including the healing of cattle, and was later
-        installed reverently in the church.
-      </p>
-    </div>
+<div id="statue">
+  <h2>Miraculous Statue of St. Joseph</h2>
+  <p>
+    The statue of St. Joseph was brought from Spain by Carmelite priests in 1905.
+    When the ship reached Kannamaly, it became mysteriously grounded. One statue—
+    with a damaged leg—was unloaded, after which the ship floated free.
+  </p>
 
-    <div id="tab-chapel" role="tabpanel" aria-labelledby="tab-btn-chapel">
-      <h2>The New Chapel of St. Joseph</h2>
-      <p>
-        The foundation stone was laid on <strong>19 March 2012</strong> by Shri Oommen Chandy and blessed
-        by Bishop Dr. Joseph Kariyil.
-      </p>
+  <p>
+    Attempts to reload the statue failed, and it was accepted as God’s will that the statue
+    remain at Kannamaly. Later, miraculous healings occurred when straw from the statue’s
+    packing cured sick cattle.
+  </p>
 
-      <p>
-        Blessed in March 2015, the chapel uniquely houses relics of ten saints and stands as the only
-        such chapel in Asia.
-      </p>
-    </div>
+  <p>
+    Recognizing its miraculous nature, the statue was installed in the church and continues
+    to bless devotees to this day.
+  </p>
+</div>
 
-  </main>
+<div id="chapel">
+  <h2>Miraculous Shrine of St. Joseph</h2>
+  <p>
+    A new shrine was envisioned to replace the old chapel built in 1946. The foundation stone
+    was laid on <strong>18 March 2012</strong> by Shri Oommen Chandy and blessed by
+    Bishop Dr. Joseph Kariyil.
+  </p>
 
-  <footer>
-    &copy; 2025 St. Antony’s Church, Kannamaly. All Rights Reserved.
-  </footer>
+  <p>
+    The shrine, built over three floors and artistically designed as a blossoming branch held
+    by St. Joseph, houses relics of <strong>ten saints</strong>.
+  </p>
 
-  <script>
-    // Tab switching logic
-    const tabButtons = document.querySelectorAll(".tabs button");
-    const tabPanels = document.querySelectorAll(".tab-content > div");
+  <p>
+    Solemnly blessed on <strong>8 March 2015</strong>, it is the <strong>only shrine in Asia</strong>
+    enshrining relics of ten saints under one roof.
+  </p>
+</div>
 
-    tabButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        // Remove active states
-        tabButtons.forEach((b) => {
-          b.classList.remove("active");
-          b.setAttribute("aria-selected", "false");
-          document.getElementById(b.getAttribute("aria-controls")).classList.remove("active");
-        });
+</main>
 
-        // Add active to clicked button and corresponding panel
-        btn.classList.add("active");
-        btn.setAttribute("aria-selected", "true");
-        const panelId = btn.getAttribute("aria-controls");
-        document.getElementById(panelId).classList.add("active");
-      });
+<footer>
+  &copy; 2025 St. Antony’s Church, Kannamaly. All Rights Reserved.
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll(".tabs button");
+  const panels = document.querySelectorAll(".tab-content > div");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      panels.forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.getAttribute("aria-controls")).classList.add("active");
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
