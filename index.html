@@ -6,16 +6,19 @@
   <title>St. Antony’s Church, Kannamaly</title>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7fa;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
+    /* HERO */
     .hero {
       position: relative;
       width: 100%;
@@ -52,6 +55,7 @@
       letter-spacing: 0.05em;
     }
 
+    /* TABS */
     .tabs {
       max-width: 900px;
       margin: 30px auto 10px;
@@ -59,57 +63,81 @@
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
+      padding: 0 10px;
     }
 
     .tabs button {
-      background: #083b66;
+      background-color: #083b66;
       color: white;
       border: none;
       padding: 10px 18px;
+      font-size: 1rem;
       font-weight: 600;
       border-radius: 4px;
       cursor: pointer;
+      transition: background-color 0.3s;
+      min-width: 130px;
+    }
+
+    .tabs button:hover {
+      background-color: #0b59a1;
     }
 
     .tabs button.active {
-      background: #f9a825;
+      background-color: #f9a825;
       color: #000;
       pointer-events: none;
+      font-weight: 700;
     }
 
+    /* CONTENT */
     .tab-content {
       max-width: 900px;
       margin: 20px auto 60px;
       background: white;
-      padding: 30px;
+      padding: 30px 25px;
       border-radius: 8px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
     }
 
     .tab-content h2 {
       color: #0b4f8a;
+      margin-top: 0;
       border-bottom: 3px solid #0b4f8a;
       padding-bottom: 6px;
     }
 
-    .tab-content > div { display: none; }
-    .tab-content > div.active { display: block; }
+    .tab-content > div {
+      display: none;
+    }
+
+    .tab-content > div.active {
+      display: block;
+    }
 
     footer {
-      background: #222;
+      background-color: #222;
       color: #ccc;
       text-align: center;
       padding: 25px;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
-      .overlay h1 { font-size: 2rem; }
+      .overlay h1 {
+        font-size: 2rem;
+      }
+      .overlay p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <img src="kannamaly.jpg" alt="St. Antony’s Church, Kannamaly">
   <div class="overlay">
@@ -118,116 +146,232 @@
   </div>
 </div>
 
+<!-- TABS -->
 <div class="tabs">
-  <button class="active" aria-controls="home">Home</button>
-  <button aria-controls="history">History</button>
-  <button aria-controls="nercha">Nercha Sadya</button>
-  <button aria-controls="statue">Miraculous Statue</button>
-  <button aria-controls="chapel">St. Joseph Shrine</button>
+  <button class="active" aria-controls="tab-home">Home</button>
+  <button aria-controls="tab-history">History</button>
+  <button aria-controls="tab-nercha">Nercha Sadya</button>
+  <button aria-controls="tab-statue">Miraculous Statue</button>
+  <button aria-controls="tab-chapel">St. Joseph Shrine</button>
 </div>
 
+<!-- CONTENT -->
 <main class="tab-content">
 
-<div id="home" class="active">
-  <h2>Home</h2>
-  <p>
-    St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
-    <strong>281 years</strong>. Rooted in deep devotion and shaped by resilience through centuries
-    of trials, the Church stands today as a living testimony of God’s grace and the loving
-    intercession of St. Antony.
-  </p>
+  <!-- HOME -->
+  <div id="tab-home" class="active">
+    <h2>Home</h2>
 
-  <p>
-    The Kannamaly St. Joseph Nercha Sadya, observed annually on <strong>19th March</strong> since
-    1905, commemorates a miraculous healing from a devastating cholera outbreak and remains
-    a powerful expression of faith and thanksgiving.
-  </p>
+    <p>
+      St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage
+      spanning over 281 years. Rooted in devotion and shaped by resilience through
+      history, the Church stands today as a living testimony of God’s grace and the
+      loving intercession of St. Antony, serving as a spiritual home for generations
+      of faithful.
+    </p>
 
-  <p>
-    The Miraculous Statue of St. Joseph, brought from Spain in 1905, continues to draw lakhs
-    of devotees who seek his powerful intercession.
-  </p>
-</div>
+    <p>
+      The Kannamaly St. Joseph Nercha Sadya, observed since 1905, commemorates a
+      miraculous healing from a cholera outbreak. Held annually on 19th March, the
+      feast remains a powerful expression of faith and thanksgiving.
+    </p>
 
-<div id="history">
-  <h2>History of St. Antony’s Church, Kannamaly</h2>
-  <p>
-    The first church at Kannamaly was established in <strong>1745</strong>, about 3 km west of the
-    present site, under the patronage of Our Lady of the Immaculate Conception. It was destroyed
-    by sea erosion in 1795, after which a second church was constructed in 1796.
-  </p>
+    <p>
+      The Miraculous Statue of St. Joseph of Kannamaly, brought from Spain in 1905,
+      is a treasured sign of God’s grace, drawing countless devotees who seek his
+      powerful intercession.
+    </p>
+  </div>
 
-  <p>
-    In <strong>1873</strong>, Kannamaly was declared an independent parish. Severe sea erosions in
-    1905 and 1908 caused extensive damage and complete ruin of the church.
-  </p>
+  <!-- HISTORY -->
+  <div id="tab-history">
+    <h2>History of St. Antony’s Church, Kannamaly</h2>
 
-  <p>
-    The foundation stone for the present church was laid on <strong>13 June 1909</strong>.
-    Built in the model of St. Paul’s Basilica, Rome, it was solemnly blessed on
-    <strong>22 November 1942</strong>. Though originally dedicated to Our Lady of the Immaculate
-    Conception, it is now revered under the patronage of <strong>St. Antony</strong>.
-  </p>
-</div>
+    <p>
+      St. Antony’s Church, Kannamaly has a rich and enduring history spanning over
+      281 years.
+    </p>
 
-<div id="nercha">
-  <h2>History of St. Joseph Nercha Sadya</h2>
-  <p>
-    The Nercha Sadya originated in <strong>1905</strong> during a time of devastating sea erosion
-    and a deadly cholera epidemic. Rev. Fr. <strong>Joseph Suarez</strong>, the parish priest,
-    received a divine vision of St. Joseph with the Infant Jesus and the Blessed Virgin Mary.
-  </p>
+    <p>
+      The first Church was established in 1745, about 3 km west of the present Church
+      site, under the patronage of Our Lady of Immaculate Conception. This Church was
+      destroyed by a sea erosion in 1795, following which a second Church was
+      constructed in 1796.
+    </p>
 
-  <p>
-    Following this, the faithful observed the Feast of St. Joseph by preparing food in their
-    homes, blessing it at the church, and sharing it with all—including the sick.
-    Miraculously, the cholera outbreak subsided.
-  </p>
+    <p>
+      In 1873, Kannamaly Church was separated from the Mundamvely parish and declared
+      as an independent parish. A severe sea erosion in 1905 caused partial damage
+      to the Church, and the destructive sea erosion of 1908 led to its complete ruin.
+    </p>
 
-  <p>
-    Since then, Kannamaly has remained free from cholera, and the Nercha Sadya continues
-    every year on <strong>19th March</strong>.
-  </p>
-</div>
+    <p>
+      On June 13, 1909, the foundation stone for the third Church was laid by Very
+      Rev. Fr. Antony Padua, Vicar Forane and Parish Priest of St. Lawrence Church,
+      Edacochin, at the present location.
+    </p>
 
-<div id="statue">
-  <h2>Miraculous Statue of St. Joseph</h2>
-  <p>
-    The statue of St. Joseph was brought from Spain by Carmelite priests in 1905.
-    When the ship reached Kannamaly, it became mysteriously grounded. One statue—
-    with a damaged leg—was unloaded, after which the ship floated free.
-  </p>
+    <p>
+      A temporary palm-leaf shed was erected over the completed foundation, where
+      liturgical services were conducted. On July 2, 1912, a Cemetery Chapel was
+      built, and the services were shifted there.
+    </p>
 
-  <p>
-    Attempts to reload the statue failed, and it was accepted as God’s will that the statue
-    remain at Kannamaly. Later, miraculous healings occurred when straw from the statue’s
-    packing cured sick cattle.
-  </p>
+    <p>
+      The present Church, which was built following the model of St. Paul’s Basilica
+      of Rome, was solemnly blessed on November 22, 1942 by His Excellency
+      Dr. Jose Vieira Alvernaz.
+    </p>
 
-  <p>
-    Recognizing its miraculous nature, the statue was installed in the church and continues
-    to bless devotees to this day.
-  </p>
-</div>
+    <p>
+      While the Church was originally dedicated to Our Lady of Immaculate
+      Conception, it is now known and revered under the patronage of St. Antony.
+    </p>
+  </div>
 
-<div id="chapel">
-  <h2>Miraculous Shrine of St. Joseph</h2>
-  <p>
-    A new shrine was envisioned to replace the old chapel built in 1946. The foundation stone
-    was laid on <strong>18 March 2012</strong> by Shri Oommen Chandy and blessed by
-    Bishop Dr. Joseph Kariyil.
-  </p>
+  <!-- NERCHA -->
+  <div id="tab-nercha">
+    <h2>History of the Kannamaly St. Joseph’s Feast and Nercha Sadya</h2>
 
-  <p>
-    The shrine, built over three floors and artistically designed as a blossoming branch held
-    by St. Joseph, houses relics of <strong>ten saints</strong>.
-  </p>
+    <p>
+      The Nercha Sadya Feast of St. Joseph at Kannamaly is a sacred tradition with a
+      history of over 121 years. Its origin dates back to 1905, a time when Kannamaly
+      faced a devastating sea erosion followed by a severe outbreak of cholera.
+    </p>
 
-  <p>
-    Solemnly blessed on <strong>8 March 2015</strong>, it is the <strong>only shrine in Asia</strong>
-    enshrining relics of ten saints under one roof.
-  </p>
-</div>
+    <p>
+      The disease, which spread rapidly through contaminated food and water,
+      claimed the lives of thousands, leaving the region in deep distress.
+    </p>
+
+    <p>
+      In this period of suffering, Rev. Fr. Joseph Suarez, the then parish priest of
+      Kannamaly Church, was blessed with a divine vision in which St. Joseph appeared
+      along with the Infant Jesus and the Blessed Virgin Mary.
+    </p>
+
+    <p>
+      Inspired by this heavenly revelation, the faithful observed the Feast of
+      St. Joseph on March 19, 1905 in a special manner. Food prepared in the homes of
+      the people was brought to the Church courtyard, blessed, and shared among the
+      faithful.
+    </p>
+
+    <p>
+      The blessed food was also distributed to those who were sick and unable to
+      come to the church.
+    </p>
+
+    <p>
+      By God’s grace and through the powerful intercession of St. Joseph, a
+      miraculous healing followed. The cholera epidemic was brought under control,
+      and the sick were restored to health after partaking of the blessed meal.
+    </p>
+
+    <p>
+      From that day onwards, Kannamaly has been spared from cholera.
+    </p>
+
+    <p>
+      Since then, every year on March 19, the Feast of St. Joseph is solemnly
+      celebrated with the Nercha Sadya. Even today, lakhs of devotees gather at
+      Kannamaly with deep faith.
+    </p>
+  </div>
+
+  <!-- STATUE -->
+  <div id="tab-statue">
+    <h2>History of the Miraculous Statue of St. Joseph of Kannamaly</h2>
+
+    <p>
+      The miraculous statue of St. Joseph venerated at Kannamaly was brought from
+      Spain by Carmelite priests through a sea voyage.
+    </p>
+
+    <p>
+      The priests were transporting three statues of St. Joseph intended for
+      churches in the southern region of India.
+    </p>
+
+    <p>
+      When the ship reached the western side of Kannamaly, the sail suddenly failed
+      to catch the wind and the vessel came to a halt. It was found that the ship had
+      become firmly grounded.
+    </p>
+
+    <p>
+      To reduce the weight, one statue of St. Joseph—whose right leg had already been
+      damaged during loading in Spain—was taken ashore. Immediately, the ship floated
+      free.
+    </p>
+
+    <p>
+      Repeated attempts to reload the statue were unsuccessful. Recognizing this as
+      a sign of divine will, the priests entrusted the statue to the people of
+      Kannamaly.
+    </p>
+
+    <p>
+      The statue, wrapped in straw, was kept aside with the intention of installing
+      it in the new Church and was later forgotten.
+    </p>
+
+    <p>
+      Around the same period, a severe diarrhoeal illness spread among cattle. A
+      woman took a piece of straw from the statue and gave it to her sick cow, which
+      recovered miraculously.
+    </p>
+
+    <p>
+      The straw was given to other affected cattle, and all of them were healed.
+    </p>
+
+    <p>
+      Recognizing the miraculous nature of the statue, it was brought out, the
+      broken leg was repaired, and it was reverently installed in the Church.
+    </p>
+
+    <p>
+      In 1946, during the tenure of Rev. Fr. Victorinus K.V., a Chapel was built, and
+      the statue was installed there.
+    </p>
+  </div>
+
+  <!-- CHAPEL -->
+  <div id="tab-chapel">
+    <h2>The Miraculous Shrine of St. Joseph</h2>
+
+    <p>
+      The Chapel originally established in 1946 had borne the marks of time, and the
+      faithful longed for a new Chapel dedicated to St. Joseph.
+    </p>
+
+    <p>
+      The foundation stone for the Miraculous Shrine of St. Joseph was laid on March
+      18, 2012 by the then Chief Minister of Kerala, Shri Oommen Chandy, and was
+      blessed by His Excellency Rt. Rev. Dr. Joseph Kariyil, Bishop of Cochin.
+    </p>
+
+    <p>
+      Incorporating Gothic, Roman, and contemporary architectural styles, the Shrine
+      is artistically designed in the form of a blossoming branch held in the hands
+      of St. Joseph.
+    </p>
+
+    <p>
+      Built over three floors with a total area of 5,000 square feet, the Shrine
+      houses ten smaller chapels containing the sacred relics of ten saints.
+    </p>
+
+    <p>
+      The Miraculous Shrine of St. Joseph was solemnly blessed on March 8, 2015.
+    </p>
+
+    <p>
+      This Shrine is the only one in Asia that enshrines the sacred relics of ten
+      saints under one roof.
+    </p>
+  </div>
 
 </main>
 
@@ -239,12 +383,12 @@
   const buttons = document.querySelectorAll(".tabs button");
   const panels = document.querySelectorAll(".tab-content > div");
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
       buttons.forEach(b => b.classList.remove("active"));
       panels.forEach(p => p.classList.remove("active"));
-      btn.classList.add("active");
-      document.getElementById(btn.getAttribute("aria-controls")).classList.add("active");
+      button.classList.add("active");
+      document.getElementById(button.getAttribute("aria-controls")).classList.add("active");
     });
   });
 </script>
