@@ -13,7 +13,46 @@
       background: #f5f5f5;
     }
 
-    /* HERO */
+    /* WELCOME SCREEN */
+    #welcome {
+      position: fixed;
+      inset: 0;
+      background: url("kannamaly.jpg") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #welcome::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .welcome-content {
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+
+    .welcome-content h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .welcome-content button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 16px;
+      background: #f9a825;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* HERO (NO FORCED HEIGHT — SAME AS BEFORE) */
     .hero {
       position: relative;
       background: #000;
@@ -21,9 +60,10 @@
 
     .hero img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: contain;
       filter: brightness(0.55);
+      display: block;
     }
 
     .hero .overlay {
@@ -119,6 +159,16 @@
 
 <body>
 
+<!-- WELCOME -->
+<div id="welcome">
+  <div class="welcome-content">
+    <h1>Welcome</h1>
+    <h2>St. Antony’s Church, Kannamaly</h2>
+    <p>Faith • History • Devotion</p>
+    <button id="enterBtn">Enter</button>
+  </div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
   <img src="kannamaly.jpg" alt="St. Antony’s Church">
@@ -147,118 +197,48 @@
   <p>
     St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
     281 years. Rooted in devotion and shaped by resilience through history, the Church stands
-    today as a living testimony of God’s grace and the loving intercession of St. Antony,
-    serving as a spiritual home for generations of faithful.
+    today as a living testimony of God’s grace and the loving intercession of St. Antony.
   </p>
 
   <p>
     The Kannamaly St. Joseph Nercha Sadya, observed since 1905, commemorates a miraculous
-    healing from a cholera outbreak. Held annually on 19th March, the feast remains a powerful
-    expression of faith, gratitude, and communal devotion.
-  </p>
-
-  <p>
-    The Miraculous Statue of St. Joseph of Kannamaly, brought from Spain in 1905, is a treasured
-    sign of God’s grace, drawing countless devotees who seek his powerful intercession.
+    healing from a cholera outbreak.
   </p>
 
   <h3>From the Gallery</h3>
 
   <div class="gallery">
-    <img src="pic1.jpeg" alt="Gallery image 1">
-    <img src="pic2.jpeg" alt="Gallery image 2">
-    <img src="pic3.jpeg" alt="Gallery image 3">
-    <img src="pic4.jpeg" alt="Gallery image 4">
-    <img src="pic5.jpeg" alt="Gallery image 5">
-    <img src="pic6.jpeg" alt="Gallery image 6">
+    <img src="pic1.jpeg">
+    <img src="pic2.jpeg">
+    <img src="pic3.jpeg">
+    <img src="pic4.jpeg">
+    <img src="pic5.jpeg">
+    <img src="pic6.jpeg">
   </div>
 </div>
 
 <!-- HISTORY -->
 <div id="history">
   <h2>History of St. Antony’s Church, Kannamaly</h2>
-
-  <p>
-    St. Antony’s Church, Kannamaly has a rich and enduring history spanning over 281 years.
-    The first Church was established in 1745, about 3 km west of the present Church site,
-    under the patronage of Our Lady of Immaculate Conception.
-  </p>
-
-  <p>
-    This Church was destroyed by sea erosion in 1795, following which a second Church was
-    constructed in 1796. In 1873, Kannamaly Church was separated from the Mundamvely parish
-    and declared an independent parish.
-  </p>
-
-  <p>
-    Severe sea erosions in 1905 and 1908 caused partial damage and complete ruin of the Church.
-    On June 13, 1909, the foundation stone for the third Church was laid at the present site.
-  </p>
-
-  <p>
-    A temporary palm-leaf shed was erected for worship. On July 2, 1912, a Cemetery Chapel
-    was built and services were shifted there. The present Church, modeled after St. Paul’s
-    Basilica of Rome, was blessed on November 22, 1942.
-  </p>
+  <p>Founded in 1745, the Church has endured sea erosion and rebirth, culminating in the present structure blessed in 1942.</p>
 </div>
 
 <!-- NERCHA -->
 <div id="nercha">
   <h2>History of the Kannamaly St. Joseph Nercha Sadya</h2>
-
-  <p>
-    The Nercha Sadya Feast of St. Joseph at Kannamaly is a sacred tradition with a history of
-    over 121 years. Its origin dates back to 1905, a time when Kannamaly faced a devastating
-    sea erosion followed by a severe outbreak of cholera.
-  </p>
-
-  <p>
-    The disease spread rapidly through contaminated food and water, claiming thousands of lives.
-  </p>
-
-  <p>
-    Rev. Fr. Joseph Suarez was blessed with a divine vision of St. Joseph with the Infant Jesus
-    and the Blessed Virgin Mary.
-  </p>
-
-  <p>
-    Food prepared in homes was brought, blessed, and shared among the faithful.
-  </p>
-
-  <p>
-    Through St. Joseph’s intercession, the epidemic subsided and Kannamaly has been spared
-    from cholera ever since.
-  </p>
+  <p>The Nercha Sadya began in 1905 following a miraculous end to a cholera outbreak.</p>
 </div>
 
 <!-- STATUE -->
 <div id="statue">
   <h2>History of the Miraculous Statue of St. Joseph</h2>
-
-  <p>
-    The statue was brought from Spain by Carmelite priests in 1905.
-  </p>
-
-  <p>
-    When the ship reached Kannamaly, it became grounded and one statue was taken ashore.
-  </p>
-
-  <p>
-    The statue was later installed after several miracles, including the healing of cattle.
-  </p>
+  <p>The statue arrived from Spain in 1905 and remains a powerful sign of faith.</p>
 </div>
 
 <!-- CHAPEL -->
 <div id="chapel">
   <h2>The Miraculous Shrine of St. Joseph</h2>
-
-  <p>
-    The new shrine foundation stone was laid on March 18, 2012.
-  </p>
-
-  <p>
-    The Shrine was blessed on March 8, 2015 and is unique in Asia.
-  </p>
+  <p>The shrine was blessed in 2015 and is unique in Asia.</p>
 </div>
 
 </div>
@@ -268,6 +248,8 @@
 </footer>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+
   document.querySelectorAll(".tabs button").forEach(button => {
     button.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
@@ -276,8 +258,22 @@
       document.getElementById(button.dataset.tab).classList.add("active");
     });
   });
+
+  const welcome = document.getElementById("welcome");
+  const enterBtn = document.getElementById("enterBtn");
+
+  if (welcome && enterBtn) {
+    enterBtn.addEventListener("click", () => {
+      welcome.style.display = "none";
+    });
+
+    setTimeout(() => {
+      welcome.style.display = "none";
+    }, 3000);
+  }
+
+});
 </script>
 
 </body>
 </html>
-
