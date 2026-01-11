@@ -6,6 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    #welcome {
+  position: fixed;
+  inset: 0;
+  background: url("kannamaly.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#welcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.welcome-content {
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.welcome-content h1 {
+  font-size: 3rem;
+}
+
+.welcome-content h2 {
+  margin-top: 10px;
+}
+
+.welcome-content button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background: #f9a825;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -119,6 +160,14 @@
 </head>
 
 <body>
+  <div id="welcome">
+  <div class="welcome-content">
+    <h1>Welcome</h1>
+    <h2>St. Antony’s Church, Kannamaly</h2>
+    <p>Faith • History • Devotion</p>
+    <button onclick="enterSite()">Enter</button>
+  </div>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -328,18 +377,43 @@ that enshrines the sacred relics of ten saints under one roof
 </footer>
 
 <script>
+  /* TAB SWITCHING (your existing code) */
   document.querySelectorAll(".tabs button").forEach(button => {
     button.addEventListener("click", () => {
       document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
       document.querySelectorAll(".tab-content > div").forEach(tab => tab.classList.remove("active"));
+
       button.classList.add("active");
       document.getElementById(button.dataset.tab).classList.add("active");
     });
   });
+
+  /* WELCOME PAGE LOGIC */
+  function enterSite() {
+    document.getElementById("welcome").style.display = "none";
+    openHome();
+  }
+
+  function openHome() {
+    document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".tab-content > div").forEach(tab => tab.classList.remove("active"));
+
+    document.querySelector('[data-tab="home"]').classList.add("active");
+    document.getElementById("home").classList.add("active");
+  }
+
+  /* AUTO ENTER AFTER 3 SECONDS */
+  setTimeout(() => {
+    const welcome = document.getElementById("welcome");
+    if (welcome) {
+      enterSite();
+    }
+  }, 3000);
 </script>
 
 </body>
 </html>
+
 
 
 
