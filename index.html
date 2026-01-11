@@ -152,6 +152,25 @@
     text-align: center;
     padding: 20px;
   }
+ .shrine-layout {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.shrine-layout img {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .shrine-layout {
+    flex-direction: column;
+  }
+}
 </style>
 </head>
 
@@ -375,39 +394,47 @@ here today, blessing all who seek his intercession with faith and devotion.
 
 <!-- CHAPEL -->
 <div id="chapel">
-<h2>The Miraculous Shrine of St. Joseph</h2>
+  <h2>The Miraculous Shrine of St. Joseph</h2>
 
-<p>
-The Chapel originally established in 1946 had borne the marks of time, and the faithful ardently
-longed for a new Chapel dedicated to St. Joseph.
-</p>
+  <div class="shrine-layout">
 
-<p>
-Accordingly, the foundation stone for the Miraculous Shrine of St. Joseph was laid on
-March 18, 2012 by the then Chief Minister of Kerala, Shri Oommen Chandy, and the
-foundation stone was blessed by His Excellency Rt. Rev. Dr. Joseph Kariyil, Bishop of Cochin.
-</p>
+    <!-- LEFT IMAGE -->
+    <img src="stjoseph.jpg" alt="St. Joseph Shrine, Kannamaly">
 
-<p>
-Incorporating Gothic, Roman, and contemporary architectural styles, the newly constructed
-Miraculous Shrine of St. Joseph is artistically designed in the form of a blossoming branch
-held in the hands of St. Joseph.
-</p>
+    <!-- RIGHT TEXT -->
+    <div>
+      <p>
+        The Chapel originally established in 1946 had borne the marks of time, and the faithful
+        ardently longed for a new Chapel dedicated to St. Joseph.
+      </p>
 
-<p>
-Built over three floors with a total area of 5,000 square feet, the Miraculous Shrine of
-St. Joseph houses ten smaller Chapels containing the sacred relics of ten Saints.
-</p>
+      <p>
+        Accordingly, the foundation stone for the Miraculous Shrine of St. Joseph was laid on
+        March 18, 2012 by the then Chief Minister of Kerala, Shri Oommen Chandy, and the
+        foundation stone was blessed by His Excellency Rt. Rev. Dr. Joseph Kariyil, Bishop of
+        Cochin.
+      </p>
 
-<p>
-The Miraculous Shrine of St. Joseph was solemnly blessed on March 8, 2015 by His
-Excellency Rt. Rev. Dr. Joseph Kariyil, Bishop of Cochin and this Shrine is the only one in
-Asia that enshrines the sacred relics of ten saints under one roof.
-</p>
+      <p>
+        Incorporating Gothic, Roman, and contemporary architectural styles, the newly constructed
+        Miraculous Shrine of St. Joseph is artistically designed in the form of a blossoming branch
+        held in the hands of St. Joseph.
+      </p>
+
+      <p>
+        Built over three floors with a total area of 5,000 square feet, the Miraculous Shrine of
+        St. Joseph houses ten smaller Chapels containing the sacred relics of ten Saints.
+      </p>
+
+      <p>
+        The Miraculous Shrine of St. Joseph was solemnly blessed on March 8, 2015 by His
+        Excellency Rt. Rev. Dr. Joseph Kariyil, Bishop of Cochin and this Shrine is the only one in
+        Asia that enshrines the sacred relics of ten saints under one roof.
+      </p>
+    </div>
+
+  </div>
 </div>
-
-</div>
-
 <footer>
 &copy; 2025 St. Antony’s Church, Kannamaly
 </footer>
@@ -429,3 +456,4 @@ setTimeout(() => welcome.style.display = "none", 3000);
 
 </body>
 </html>
+
