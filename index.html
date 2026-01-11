@@ -124,6 +124,33 @@
 <div class="hero">
   <img src="kannamaly.jpg" alt="St. Antony’s Church">
   <div class="overlay">
+    .image-container {
+  /* Define the visible area of the image */
+  width: 300px;
+  height: 200px;
+  /* Hide the overflowing parts of the zoomed image */
+  overflow: hidden;
+  /* Smooth transition for the container in case you add other effects */
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.image-container img {
+  /* Ensure the image fills its container initially */
+  width: 100%;
+  height: auto;
+  /* Smooth transition for the transform property (zoom) */
+  transition: transform 0.5s ease;
+  /* Maintain aspect ratio */
+  display: block;
+}
+
+/* The hover effect */
+.image-container:hover img {
+  /* Scale the image to 1.2 times its original size (20% zoom) */
+  transform: scale(1.2);
+  /* You can also add other transforms, like a slight shift */
+  /* transform: scale(1.2) translateX(10px); */
+}
     <h1>St. Antony’s Church, Kannamaly</h1>
     <p>Faith • History • Devotion</p>
   </div>
@@ -340,6 +367,7 @@ that enshrines the sacred relics of ten saints under one roof
 
 </body>
 </html>
+
 
 
 
