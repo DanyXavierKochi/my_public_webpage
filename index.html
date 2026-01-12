@@ -140,7 +140,40 @@ h2{
 .chapel-text{
   flex:1;
 }
+.nercha-wrap{
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
 
+.nercha-text{
+  flex: 1;
+}
+
+.nercha-images{
+  width: 260px;   /* smaller so it fits nicely */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nercha-images img{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Stack only on small phones */
+@media (max-width: 600px){
+  .nercha-wrap{
+    flex-direction: column;
+  }
+  .nercha-images{
+    width: 100%;
+  }
+}
+}
 /* FOOTER */
 footer{
   background:#222;
@@ -260,8 +293,13 @@ footer{
   <div class="nercha-wrap">
 
     <!-- LEFT SIDE: TEXT (UNCHANGED) -->
-    <div class="nercha-text">
+    <div id="nercha">
+  <h2>History of the Kannamaly St. Joseph Nercha Sadya</h2>
 
+  <div class="nercha-wrap">
+
+    <div class="nercha-text">
+      <!-- YOUR FULL ORIGINAL TEXT — DO NOT CHANGE -->
       <p>
         The Nercha Sadya Feast of St. Joseph at Kannamaly is a sacred tradition with a history of
         over 121 years. Its origin dates back to 1905, a time when Kannamaly faced a devastating
@@ -305,6 +343,16 @@ footer{
         Even today, lakhs of devotees gather at Kannamaly with deep faith to participate in this
         sacred offering and to receive the abundant blessings of St. Joseph.
       </p>
+    </div>
+
+    <div class="nercha-images">
+      <img src="sadyanercha.jpg" alt="Nercha Sadya">
+      <img src="sadyanercha2.jpg" alt="Nercha Sadya">
+    </div>
+
+  </div>
+
+     
 
     </div>
 
@@ -443,5 +491,6 @@ setTimeout(()=>{document.getElementById("welcome").style.display="none";},3000);
 
 </body>
 </html>
+
 
 
