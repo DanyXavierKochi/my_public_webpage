@@ -125,7 +125,7 @@ h2{
   box-shadow:0 6px 15px rgba(0,0,0,.15);
 }
 
-/* CHAPEL */
+/* CHAPEL LAYOUT */
 .chapel-wrap{
   display:flex;
   gap:25px;
@@ -137,7 +137,9 @@ h2{
   border-radius:12px;
   box-shadow:0 6px 15px rgba(0,0,0,.2);
 }
-.chapel-text{flex:1}
+.chapel-text{
+  flex:1;
+}
 
 /* FOOTER */
 footer{
@@ -154,33 +156,6 @@ footer{
   to{opacity:1;transform:translate(-50%,-50%)}
 }
 @keyframes contentFade{to{opacity:1;transform:translateY(0)}}
-
-/* =========================
-   NEW CSS (ADDED ONLY)
-   ========================= */
-.nercha-wrap{
-  display:flex;
-  gap:30px;
-  align-items:flex-start;
-}
-.nercha-text{
-  flex:1;
-}
-.nercha-images{
-  width:300px;
-  display:flex;
-  flex-direction:column;
-  gap:20px;
-}
-.nercha-images img{
-  width:100%;
-  border-radius:12px;
-  box-shadow:0 6px 15px rgba(0,0,0,.2);
-}
-@media(max-width:900px){
-  .nercha-wrap{flex-direction:column}
-  .nercha-images{width:100%}
-}
 </style>
 </head>
 
@@ -198,7 +173,7 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="kannamaly.jpg">
+  <img src="kannamaly.jpg" alt="St. Antony’s Church">
   <div class="overlay">
     <h1>St. Antony’s Church, Kannamaly</h1>
     <p>Faith • History • Devotion</p>
@@ -215,11 +190,13 @@ footer{
   <button data-tab="mass">Mass Timings</button>
 </div>
 
+<!-- CONTENT -->
 <div class="tab-content">
 
 <!-- HOME -->
 <div id="home" class="active">
 <h2>Home</h2>
+
 <p>
       St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
       281 years. Rooted in devotion and shaped by resilience through history, the Church stands
@@ -240,41 +217,46 @@ footer{
 
 
 
+<h3>From the Gallery</h3>
+<div class="gallery">
+<img src="pic1.jpeg"><img src="pic2.jpeg"><img src="pic3.jpeg">
+<img src="pic4.jpeg"><img src="pic5.jpeg"><img src="pic6.jpeg">
+</div>
 </div>
 
-<!-- HISTORY -->
-<div id="history">
-<h2>History of St. Antony’s Church, Kannamaly</h2>
-<p>
-      St. Antony’s Church, Kannamaly is a faith-filled parish with a sacred heritage spanning over
-      281 years. Rooted in devotion and shaped by resilience through history, the Church stands
-      today as a living testimony of God’s grace and the loving intercession of St. Antony,
-      serving as a spiritual home for generations of faithful.
+  <!-- HISTORY -->
+  <div id="history">
+    <h2>History of St. Antony’s Church, Kannamaly</h2>
+
+    <p>
+      St. Antony’s Church, Kannamaly has a rich and enduring history spanning over 281 years.
+      The first Church was established in 1745, about 3 km west of the present Church site,
+      under the patronage of Our Lady of Immaculate Conception.
     </p>
 
     <p>
-      The Kannamaly St. Joseph Nercha Sadya, observed since 1905, commemorates a miraculous
-      healing from a cholera outbreak. Held annually on 19th March, the feast remains a powerful
-      expression of faith, gratitude, and communal devotion.
+      This Church was destroyed by sea erosion in 1795, following which a second Church was
+      constructed in 1796. In 1873, Kannamaly Church was separated from the Mundamvely parish
+      and declared an independent parish.
     </p>
 
     <p>
-      The Miraculous Statue of St. Joseph of Kannamaly, brought from Spain in 1905, is a treasured
-      sign of God’s grace, drawing countless devotees who seek his powerful intercession.
+      Severe sea erosions in 1905 and 1908 caused partial damage and complete ruin of the Church.
+      On June 13, 1909, the foundation stone for the third Church was laid at the present site.
     </p>
 
+    <p>
+      A temporary palm-leaf shed was erected for worship. On July 2, 1912, a Cemetery Chapel
+      was built and services were shifted there. The present Church, modeled after St. Paul’s
+      Basilica of Rome, was blessed on November 22, 1942.
+    </p>
+  </div>
 
+  <!-- NERCHA -->
+  <div id="nercha">
+    <h2>History of the Kannamaly St. Joseph Nercha Sadya</h2>
 
-</div>
-
-<!-- NERCHA (UPDATED ONLY HERE) -->
-<div id="nercha">
-<h2>History of the Kannamaly St. Joseph Nercha Sadya</h2>
-
-<div class="nercha-wrap">
-  <div class="nercha-text">
-    <!-- ALL YOUR ORIGINAL NERCHA TEXT HERE (UNCHANGED) -->
-   <p>
+    <p>
     The Nercha Sadya Feast of St. Joseph at Kannamaly is a sacred tradition with a history of
     over 121 years. Its origin dates back to 1905, a time when Kannamaly faced a devastating
     sea erosion followed by a severe outbreak of cholera.
@@ -317,19 +299,9 @@ footer{
     Even today, lakhs of devotees gather at Kannamaly with deep faith to participate in this
     sacred offering and to receive the abundant blessings of St. Joseph.
   </p>
-
   </div>
 
-  <div class="nercha-images">
-    <img src="nercha1.jpg" alt="Nercha Sadya">
-    <img src="nercha2.jpg" alt="Nercha Sadya">
-  </div>
-</div>
-</div>
-
-<!-- OTHER TABS UNCHANGED -->
-
-<!-- STATUE -->
+  <!-- STATUE -->
   <div id="statue">
     <h2>History of the Miraculous Statue of St. Joseph</h2>
 
@@ -445,8 +417,11 @@ document.querySelectorAll(".tabs button").forEach(btn=>{
     document.getElementById(btn.dataset.tab).classList.add("active");
   });
 });
-document.getElementById("enterBtn").onclick=()=>{welcome.style.display="none"};
-setTimeout(()=>{welcome.style.display="none"},3000);
+
+document.getElementById("enterBtn").onclick=()=>{
+  document.getElementById("welcome").style.display="none";
+};
+setTimeout(()=>{document.getElementById("welcome").style.display="none";},3000);
 </script>
 
 </body>
